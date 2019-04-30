@@ -1,0 +1,35 @@
+{
+   "author": "Peter Snyder \u003Cpsnyde2@uic.edu> (https://www.peteresnyder.com)",
+   "background": {
+      "scripts": [ "lib/third_party/uri.all.min.js", "lib/third_party/sjcl.js", "lib/init.js", "lib/browser.js", "lib/standards.js", "lib/reports.js", "lib/pack.js", "lib/defaults.js", "lib/httpheaders.js", "lib/cookieencoding.js", "lib/proxyblock.js", "lib/blockrules.js", "lib/migration.js", "lib/preferences.js", "background_scripts/tab_blocked_features.js", "background_scripts/messages.js", "background_scripts/background.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "128": "images/uic-128.png",
+         "48": "images/uic-48.png"
+      },
+      "default_popup": "pages/popup/popup.html"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "lib/third_party/js.cookie.js", "lib/third_party/sjcl.js", "lib/init.js", "lib/browser.js", "lib/standards.js", "lib/pack.js", "lib/cookieencoding.js", "lib/proxyblock.js", "lib/preferences.js", "content_scripts/instrument.js"],
+      "match_about_blank": true,
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_start"
+   } ],
+   "description": "Improves browser security and privacy by controlling page access to the Web API.",
+   "icons": {
+      "128": "images/uic-128.png",
+      "48": "images/uic-48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtC27OhRudHVlp54PLjIeaT9hT6Z5w7Y89KzgEpZgDxagg5eNp3hdeT6DSKjTj83ST26mAqteV38Lx1wj/cGc1r4KnVTu75CRs1MNz2d52rsHHkgOlAm2YYdkacDhYjQxj9ghRFVm0PBvxWrahtXBpMVUtg2xBRXufpDZr+V8IWchtpjpAplzIaNgtGOZLxh5ADQDYsK3TwmZDFKg2U/0w3Y0dMPLgng0sAIjo8sgvzKoxqatam66ily3O8k1q9QIEABpDv3t4XLc/clH+cyy/hVcepMMbEJ4JzT+LB1CJud26Cp7FLfmpz6WOonembD85zCC9+KPruuAAZa4h99dSwIDAQAB",
+   "manifest_version": 2,
+   "name": "WebAPI Manager",
+   "options_ui": {
+      "open_in_tab": true,
+      "page": "config/index.html"
+   },
+   "permissions": [ "activeTab", "contextMenus", "cookies", "privacy", "storage", "tabs", "unlimitedStorage", "webNavigation", "webRequest", "webRequestBlocking", "\u003Call_urls>" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.9.27"
+}
