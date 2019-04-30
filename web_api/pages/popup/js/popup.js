@@ -134,8 +134,6 @@
             html+="</table>";
             temp.innerHTML = html;
             trElm.appendChild(temp)
-            
-        alert(standardsLib.nameForStandardId(numAPIsBlocked[0]))
     }, false);
         
 
